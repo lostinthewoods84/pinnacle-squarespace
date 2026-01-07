@@ -1,0 +1,9 @@
+{
+  "name": "pinnacle-squarespace",
+  "private": true,
+  "scripts": {
+    "build:css": "cat src/css/*.css > dist/styles.css",
+    "build:js": "cat src/js/*.js > dist/site.js",
+    "build": "npm run build:css && npm run build:js"
+  }
+}
