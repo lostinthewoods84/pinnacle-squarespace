@@ -23,7 +23,8 @@
     } else {
         renderHome();
     }
-})();// src/js/templates.js
+})();
+// src/js/templates.js
 window.PINNACLE_TEMPLATES = window.PINNACLE_TEMPLATES || {};
 
 window.PINNACLE_TEMPLATES.home = function () {
