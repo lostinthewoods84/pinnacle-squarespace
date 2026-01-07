@@ -1,7 +1,8 @@
 /* src/css/40-home.css */
-/* PINNACLE - HOME (scoped to #pinnacle-home) */
+/* PINNACLE - HOME (scoped to the Squarespace placeholder #pinnacle-home) */
 
-#pinnacle-home {
+/* Outer wrapper (fixes duplicate-id issue by using a class inside the #pinnacle-home placeholder) */
+#pinnacle-home .pinnacle-home {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     color: #0d2818;
     max-width: 1400px;
@@ -48,6 +49,7 @@
     font-weight: 600;
     margin-bottom: 1.5rem;
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 #pinnacle-home .prt-hero h1 {
@@ -108,6 +110,7 @@
     color: white;
     border: 2px solid rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 #pinnacle-home .prt-btn-secondary:hover {
