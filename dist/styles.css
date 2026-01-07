@@ -2,7 +2,7 @@
 /* PINNACLE - HOME (scoped to the Squarespace placeholder .pinnacle-home) */
 
 /* Outer wrapper (fixes duplicate-id issue by using a class inside the .pinnacle-home placeholder) */
-.pinnacle-home .pinnacle-home {
+.pinnacle-home {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     color: #0d2818;
     max-width: 1400px;

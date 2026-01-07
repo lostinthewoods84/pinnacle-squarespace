@@ -1,8 +1,8 @@
 // src/js/site.js
 (function () {
 
-    function mount(targetId, html) {
-        const target = document.getElementById(targetId);
+    function mount(targetSelector, html) {
+        const target = document.querySelector(targetSelector);  // Changed to querySelector
         if (!target) return false;
         target.innerHTML = html;
         return true;
@@ -11,10 +11,9 @@
     function renderHome() {
         const templates = window.PINNACLE_TEMPLATES || {};
 
-        // Home page placeholder in Squarespace should be: <div id="pinnacle-home"></div>
-        // This will replace that placeholder's contents with the full template.
+        // Home page placeholder in Squarespace should be: <div class="pinnacle-home"></div>
         if (templates.home) {
-            mount("pinnacle-home", templates.home());
+            mount(".pinnacle-home", templates.home());  // Changed to class selector
         }
     }
 

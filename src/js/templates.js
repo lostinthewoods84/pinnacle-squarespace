@@ -3,7 +3,7 @@ window.PINNACLE_TEMPLATES = window.PINNACLE_TEMPLATES || {};
 
 window.PINNACLE_TEMPLATES.home = function () {
     return `
-<div id="pinnacle-home">
+<div class="pinnacle-home">
 
   <!-- HERO SECTION -->
   <div class="prt-hero">
