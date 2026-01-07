@@ -1,6 +1,5 @@
 // src/js/site.js
 (function () {
-    const templates = window.PINNACLE_TEMPLATES || {};
 
     function mount(targetId, html) {
         const target = document.getElementById(targetId);
@@ -9,10 +8,20 @@
         return true;
     }
 
-    // Home page placeholder in Squarespace should be: <div id="pinnacle-home"></div>
-    // This will replace that placeholder's contents with the full template.
-    if (templates.home) {
-        mount("pinnacle-home", templates.home());
+    function renderHome() {
+        const templates = window.PINNACLE_TEMPLATES || {};
+
+        // Home page placeholder in Squarespace should be: <div id="pinnacle-home"></div>
+        // This will replace that placeholder's contents with the full template.
+        if (templates.home) {
+            mount("pinnacle-home", templates.home());
+        }
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", renderHome, { once: true });
+    } else {
+        renderHome();
     }
 })();// src/js/templates.js
 window.PINNACLE_TEMPLATES = window.PINNACLE_TEMPLATES || {};
