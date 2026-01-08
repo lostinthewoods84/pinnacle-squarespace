@@ -84,10 +84,10 @@ window.PINNACLE_TEMPLATES.home = function () {
 <div class="prt-service-card">
   <div class="prt-service-icon">
     <!-- Marketing / Promotion Icon -->
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-        d="M3 10v4a1 1 0 001 1h3l4 4V5L7 9H4a1 1 0 00-1 1zM14 9.5a4.5 4.5 0 010 5" />
-    </svg>
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+    d="M3 3v18h18M7 14l4-4 4 4 5-6" />
+</svg>
   </div>
 
   <h3 class="prt-service-title">Integrated Marketing Support</h3>
