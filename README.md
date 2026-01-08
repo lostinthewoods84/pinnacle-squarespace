@@ -342,6 +342,23 @@ git log                # See commit history
 - **GitHub Repo:** https://github.com/lostinthewoods84/pinnacle-squarespace
 - **Commits:** https://github.com/lostinthewoods84/pinnacle-squarespace/commits/main
 
+## 📅 Homepage Upcoming Events (Squarespace-driven)
+
+The homepage "Upcoming Events" list is **not injected by JavaScript**.
+
+Instead, it is powered by a **Squarespace Summary Block** that pulls from the site's native Events page:
+
+**Home Page → Add Block → Summary**
+- Source: **Events**
+- Items: **Upcoming**
+- Limit: **3**
+- Sort: **Event Date (Ascending)**
+
+This ensures the homepage always displays the next 3 upcoming races automatically, based on the Events page data (dates/times), without duplicating content in code.
+
+### Styling
+Styles for the Summary Block are maintained in this repo (CSS), not in Squarespace.
+
 ---
 
 **Last Updated:** January 2026

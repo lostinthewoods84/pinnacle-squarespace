@@ -1,8 +1,8 @@
-// src/js/templates.js
+// src/js/10-templates.js
 window.PINNACLE_TEMPLATES = window.PINNACLE_TEMPLATES || {};
 
 window.PINNACLE_TEMPLATES.home = function () {
-    return `
+  return `
 <div class="pinnacle-home">
 
   <!-- HERO SECTION -->
@@ -71,7 +71,8 @@ window.PINNACLE_TEMPLATES.home = function () {
       <div class="prt-service-card">
         <div class="prt-service-icon">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M13 10V3L4 14h7v7l9-11h-7z" />
           </svg>
         </div>
         <h3 class="prt-service-title">Real-Time Results</h3>
@@ -83,7 +84,8 @@ window.PINNACLE_TEMPLATES.home = function () {
       <div class="prt-service-card">
         <div class="prt-service-icon">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
         </div>
         <h3 class="prt-service-title">USATF Certified</h3>
@@ -95,7 +97,8 @@ window.PINNACLE_TEMPLATES.home = function () {
       <div class="prt-service-card">
         <div class="prt-service-icon">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
         </div>
         <h3 class="prt-service-title">Turnkey Service</h3>
@@ -103,58 +106,6 @@ window.PINNACLE_TEMPLATES.home = function () {
           From setup to teardown, we handle all timing equipment, registration integration, and result processing.
         </p>
       </div>
-    </div>
-  </div>
-
-  <!-- UPCOMING EVENTS PREVIEW -->
-  <div class="prt-section">
-    <div class="prt-section-header">
-      <h2 class="prt-section-title">Upcoming 2026 Events</h2>
-      <p class="prt-section-subtitle">
-        Join us at these premier races across the Upper Valley
-      </p>
-    </div>
-
-    <div class="prt-events-grid">
-      <div class="prt-event-card">
-        <div class="prt-event-content">
-          <span class="prt-event-date">February 7, 2026</span>
-          <h3 class="prt-event-title">Ledyard Red Zone 5K</h3>
-          <div class="prt-event-meta">
-            <span>📍 Ledyard, CT</span>
-            <span>•</span>
-            <span>5K Run</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="prt-event-card">
-        <div class="prt-event-content">
-          <span class="prt-event-date">February 8, 2026</span>
-          <h3 class="prt-event-title">Crown Point Pigskin 5K</h3>
-          <div class="prt-event-meta">
-            <span>📍 Crown Point, NY</span>
-            <span>•</span>
-            <span>5K Run</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="prt-event-card">
-        <div class="prt-event-content">
-          <span class="prt-event-date">April 4, 2026</span>
-          <h3 class="prt-event-title">Dirty Paws Fun Run</h3>
-          <div class="prt-event-meta">
-            <span>📍 Vermont</span>
-            <span>•</span>
-            <span>Fun Run & 5K</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div style="text-align: center; margin-top: 2.5rem;">
-      <a href="/events" class="prt-btn prt-btn-primary">View Full Schedule</a>
     </div>
   </div>
 

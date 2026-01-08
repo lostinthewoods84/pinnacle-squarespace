@@ -1,0 +1,20 @@
+/* Squarespace-native blocks on the HOME page */
+[data-url-slug="home"] .sqs-block-summary-v2 .summary-item {
+  border-bottom: 1px solid rgba(0,0,0,.08);
+  padding: 14px 0;
+}
+
+[data-url-slug="home"] .sqs-block-summary-v2 .summary-title a {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+[data-url-slug="home"] .sqs-block-summary-v2 .summary-metadata {
+  opacity: .8;
+  font-size: 0.95em;
+}
+
+/* Optional: hide the "Read More" / button if Squarespace shows it */
+[data-url-slug="home"] .sqs-block-summary-v2 .summary-read-more-link {
+  display: none;
+}
