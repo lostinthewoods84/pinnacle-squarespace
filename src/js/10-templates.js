@@ -24,7 +24,7 @@ window.PINNACLE_TEMPLATES.home = function () {
       <div class="prt-trust">
         <div class="prt-trust-item">
           <span class="prt-trust-icon">✓</span>
-          <span>USATF Certified</span>
+          <span>Professional Race Timing</span>
         </div>
         <div class="prt-trust-item">
           <span class="prt-trust-icon">✓</span>
@@ -88,9 +88,9 @@ window.PINNACLE_TEMPLATES.home = function () {
               d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
         </div>
-        <h3 class="prt-service-title">USATF Certified</h3>
+        <h3 class="prt-service-title">Integrated Marketing Support</h3>
         <p class="prt-service-desc">
-          Our certified course measurements and professional timing meet all USATF standards for official events.
+          We offer optional promotion tools and content support to help races increase visibility and drive registrations.
         </p>
       </div>
 
