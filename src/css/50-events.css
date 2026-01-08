@@ -75,3 +75,22 @@
     border-radius: 12px;
   }
 }
+/* Reduce event thumbnail size */
+.collection-type-events .eventlist-thumbnail,
+.collection-type-events .event-thumbnail,
+.collection-type-events .eventlist-event--image {
+  max-width: 120px;      /* adjust: 100–140px is a good range */
+  flex: 0 0 120px;
+}
+
+/* Ensure image scales nicely inside the smaller frame */
+.collection-type-events .eventlist-thumbnail img,
+.collection-type-events .event-thumbnail img,
+.collection-type-events .eventlist-event--image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.collection-type-events .eventlist-event {
+  gap: 16px;
+}
