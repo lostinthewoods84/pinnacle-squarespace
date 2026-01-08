@@ -81,18 +81,21 @@ window.PINNACLE_TEMPLATES.home = function () {
         </p>
       </div>
 
-      <div class="prt-service-card">
-        <div class="prt-service-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-        </div>
-        <h3 class="prt-service-title">Integrated Marketing Support</h3>
-        <p class="prt-service-desc">
-          We offer optional promotion tools and content support to help races increase visibility and drive registrations.
-        </p>
-      </div>
+<div class="prt-service-card">
+  <div class="prt-service-icon">
+    <!-- Marketing / Promotion Icon -->
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M3 10v4a1 1 0 001 1h3l4 4V5L7 9H4a1 1 0 00-1 1zM14 9.5a4.5 4.5 0 010 5" />
+    </svg>
+  </div>
+
+  <h3 class="prt-service-title">Integrated Marketing Support</h3>
+  <p class="prt-service-desc">
+    We offer optional promotion tools and content support to help races increase visibility and drive registrations.
+  </p>
+</div>
+
 
       <div class="prt-service-card">
         <div class="prt-service-icon">
