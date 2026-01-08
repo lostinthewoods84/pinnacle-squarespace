@@ -1,0 +1,77 @@
+/* src/css/50-events.css */
+/* PINNACLE - EVENTS PAGE (Squarespace Events) */
+
+/* Event item "card" styling (multiple selector fallbacks) */
+.collection-type-events .eventlist-event,
+.collection-type-events .eventitem,
+.collection-type-events .events-collection-item,
+.collection-type-events article {
+  background: #ffffff;
+  border: 1px solid rgba(13, 40, 24, 0.10);
+  border-radius: 14px;
+  padding: 18px 18px;
+  margin: 14px 0;
+  box-shadow: 0 8px 22px rgba(13, 40, 24, 0.06);
+}
+
+/* Clearer separation between items */
+.collection-type-events .eventlist-event + .eventlist-event {
+  margin-top: 16px;
+}
+
+/* Meta text (date/time/location) */
+.collection-type-events .eventlist-meta,
+.collection-type-events .event-meta,
+.collection-type-events .eventlist-event--meta,
+.collection-type-events time {
+  color: rgba(13, 40, 24, 0.70);
+  font-size: 0.98rem;
+  line-height: 1.35;
+}
+
+/* Excerpt/description spacing */
+.collection-type-events .eventlist-excerpt,
+.collection-type-events .event-excerpt,
+.collection-type-events .eventlist-description {
+  margin-top: 10px;
+  color: rgba(13, 40, 24, 0.85);
+  line-height: 1.55;
+}
+
+/* Thumbnail/logo framing + reduce “blend in” */
+.collection-type-events .eventlist-thumbnail,
+.collection-type-events .event-thumbnail,
+.collection-type-events .eventlist-event--image {
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(13, 40, 24, 0.10);
+}
+
+/* Try to avoid hard-cropping logos (works on some templates) */
+.collection-type-events .eventlist-thumbnail img,
+.collection-type-events .event-thumbnail img,
+.collection-type-events .eventlist-event--image img {
+  object-fit: contain !important;
+  background: #fff;
+}
+
+/* Subtle hover lift */
+.collection-type-events .eventlist-event:hover,
+.collection-type-events .eventitem:hover,
+.collection-type-events .events-collection-item:hover,
+.collection-type-events article:hover {
+  transform: translateY(-2px);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+  box-shadow: 0 12px 30px rgba(13, 40, 24, 0.10);
+}
+
+@media (max-width: 640px) {
+  .collection-type-events .eventlist-event,
+  .collection-type-events .eventitem,
+  .collection-type-events .events-collection-item,
+  .collection-type-events article {
+    padding: 16px 14px;
+    border-radius: 12px;
+  }
+}
