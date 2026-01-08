@@ -99,10 +99,20 @@ window.PINNACLE_TEMPLATES.home = function () {
 
       <div class="prt-service-card">
         <div class="prt-service-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <!-- Checklist lines -->
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+    d="M9 6h10M9 12h6M9 18h4" />
+
+  <!-- Checkmarks -->
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+    d="M5 6l1.5 1.5L8 5M5 12l1.5 1.5L8 11M5 18l1.5 1.5L8 17" />
+
+  <!-- Gear (bottom-right, subtle) -->
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+    d="M18.5 14.5l.6 1.2 1.3.2-.9 1 .2 1.3-1.2-.6-1.2.6.2-1.3-.9-1 1.3-.2.6-1.2z" />
+</svg>
+
         </div>
         <h3 class="prt-service-title">Turnkey Service</h3>
         <p class="prt-service-desc">
