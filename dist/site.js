@@ -17,9 +17,14 @@ window.PINNACLE_TEMPLATES.home = function () {
       </p>
 
       <div class="prt-hero-cta">
-        <a href="/contact" class="prt-btn prt-btn-primary">Get a Quote</a>
-        <a href="/events" class="prt-btn prt-btn-secondary">View 2026 Events</a>
-      </div>
+  <a href="/contact" class="prt-btn prt-btn-primary">
+    Get a Quote
+  </a>
+
+  <a href="/events" class="prt-btn prt-btn-secondary">
+    View 2026 Events →
+  </a>
+</div>
 
       <div class="prt-trust">
         <div class="prt-trust-item">
