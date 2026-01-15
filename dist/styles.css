@@ -18,21 +18,22 @@
 [data-url-slug="home"] .sqs-block-summary-v2 .summary-read-more-link {
   display: none;
 }/* src/css/40-home.css */
-/* PINNACLE - HOME (scoped to the Squarespace placeholder .pinnacle-home)
-   Clean, modern baseline + obvious hero CTAs
-*/
+/* PINNACLE - HOME (scoped to the Squarespace placeholder .pinnacle-home) */
 
+/* ===============================
+   Base wrapper
+   =============================== */
 .pinnacle-home {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   color: #0d2818;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0;
+  padding: 0 1rem;
 }
 
-/* ---------------------------
-   HERO
---------------------------- */
+/* ===============================
+   HERO SECTION
+   =============================== */
 .pinnacle-home .prt-hero {
   position: relative;
   min-height: 85vh;
@@ -42,16 +43,17 @@
   overflow: hidden;
   background: linear-gradient(135deg, #1a5f3f 0%, #2d7a54 100%);
   border-radius: 16px;
-  margin: 0 1rem 3rem;
+  margin: 1rem 0 3rem;
   color: #fff;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.18);
 }
 
 .pinnacle-home .prt-hero-background {
   position: absolute;
   inset: 0;
   opacity: 0.14;
-  background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M100 20 L180 180 L20 180 Z' fill='white' opacity='0.11'/%3E%3C/svg%3E");
-  background-size: 200px 200px;
+  background-image: url("data:image/svg+xml,%3Csvg width='220' height='220' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M100 20 L180 180 L20 180 Z' fill='white' opacity='0.12'/%3E%3C/svg%3E");
+  background-size: 220px 220px;
 }
 
 .pinnacle-home .prt-hero-content {
@@ -64,49 +66,46 @@
 
 .pinnacle-home .prt-hero-badge {
   display: inline-block;
-  padding: 8px 18px;
-  background: rgba(255, 255, 255, 0.14);
-  border: 1px solid rgba(255, 255, 255, 0.28);
+  padding: 10px 18px;
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.28);
   border-radius: 999px;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 650;
-  letter-spacing: 0.01em;
-  margin-bottom: 1.4rem;
+  margin-bottom: 1.5rem;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
 
 .pinnacle-home .prt-hero h1 {
-  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: 850;
   line-height: 1.08;
   margin: 0 0 1.25rem;
   letter-spacing: -0.02em;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.22);
 }
 
 .pinnacle-home .prt-hero-subtitle {
-  font-size: clamp(1.1rem, 2vw, 1.35rem);
-  margin: 0 auto 2.2rem;
-  line-height: 1.6;
+  font-size: clamp(1.125rem, 2vw, 1.375rem);
+  color: rgba(255,255,255,0.92);
+  margin: 0 auto 2.25rem;
+  line-height: 1.65;
   max-width: 720px;
-  color: rgba(255, 255, 255, 0.92);
 }
 
-/* ---------------------------
-   HERO CTA (buttons)
-   NOTE: requires HTML to use:
-   <a class="prt-btn prt-btn-primary">...</a>
-   <a class="prt-btn prt-btn-secondary">...</a>
---------------------------- */
+/* ===============================
+   HERO CTA BUTTONS (FIX)
+   =============================== */
 .pinnacle-home .prt-hero-cta {
   display: flex;
-  gap: 1.1rem;
+  gap: 1rem;
   justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
-  margin: 0 0 2.2rem;
+  margin-bottom: 2rem;
 }
 
+/* Base button */
 .pinnacle-home .prt-btn {
   display: inline-flex;
   align-items: center;
@@ -115,102 +114,128 @@
   border-radius: 999px;
   font-weight: 750;
   font-size: 1.05rem;
-  letter-spacing: 0.01em;
   text-decoration: none;
   cursor: pointer;
-  border: none;
-  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+  user-select: none;
   white-space: nowrap;
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* Primary = filled, high contrast */
+/* Primary */
 .pinnacle-home .prt-btn-primary {
   background: #ffffff;
   color: #1a5f3f;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(255,255,255,0.75);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.24);
 }
 
 .pinnacle-home .prt-btn-primary:hover,
 .pinnacle-home .prt-btn-primary:focus-visible {
   transform: translateY(-3px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.38);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.34);
   background: #f6faf7;
   color: #1a5f3f;
 }
 
-/* Secondary = outlined glass button */
+/* Secondary */
 .pinnacle-home .prt-btn-secondary {
-  background: rgba(255, 255, 255, 0.10);
+  background: rgba(255,255,255,0.10);
   color: #ffffff;
-  border: 2px solid rgba(255, 255, 255, 0.70);
+  border: 2px solid rgba(255,255,255,0.70);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.14);
 }
 
 .pinnacle-home .prt-btn-secondary:hover,
 .pinnacle-home .prt-btn-secondary:focus-visible {
   transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.18);
-  border-color: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+  background: rgba(255,255,255,0.18);
+  border-color: rgba(255,255,255,0.95);
+  box-shadow: 0 16px 34px rgba(0,0,0,0.22);
   color: #ffffff;
 }
 
-/* Clear keyboard focus */
+/* Keyboard focus */
 .pinnacle-home .prt-btn:focus-visible {
-  outline: 3px solid rgba(127, 178, 133, 0.9);
+  outline: 3px solid rgba(127,178,133,0.9);
   outline-offset: 4px;
 }
 
-/* ---------------------------
-   TRUST STRIP
---------------------------- */
+/* Subtle primary pulse (only hero, stops on hover/focus) */
+@keyframes prtPulse {
+  0%   { transform: translateY(0); box-shadow: 0 12px 28px rgba(0,0,0,0.24); }
+  50%  { transform: translateY(-1px); box-shadow: 0 16px 34px rgba(0,0,0,0.30); }
+  100% { transform: translateY(0); box-shadow: 0 12px 28px rgba(0,0,0,0.24); }
+}
+
+.pinnacle-home .prt-hero-cta .prt-btn-primary {
+  animation: prtPulse 2.8s ease-in-out infinite;
+}
+
+.pinnacle-home .prt-hero-cta .prt-btn-primary:hover,
+.pinnacle-home .prt-hero-cta .prt-btn-primary:focus-visible {
+  animation: none;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .pinnacle-home .prt-hero-cta .prt-btn-primary {
+    animation: none !important;
+  }
+  .pinnacle-home .prt-btn {
+    transition: none !important;
+  }
+}
+
+/* ===============================
+   TRUST
+   =============================== */
 .pinnacle-home .prt-trust {
   display: flex;
-  gap: 1.25rem;
+  gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255,255,255,0.92);
 }
 
 .pinnacle-home .prt-trust-item {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 8px 12px;
-  background: rgba(255, 255, 255, 0.10);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  gap: 0.55rem;
+  padding: 8px 14px;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.20);
   border-radius: 999px;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
 
 .pinnacle-home .prt-trust-icon {
-  width: 18px;
-  height: 18px;
-  line-height: 1;
+  font-weight: 900;
   opacity: 0.95;
 }
 
-/* ---------------------------
+/* ===============================
    STATS
---------------------------- */
+   =============================== */
 .pinnacle-home .prt-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 2rem;
   margin: 4rem 0;
-  padding: 0 1rem;
+  padding: 0;
 }
 
 .pinnacle-home .prt-stat-card {
   background: #ffffff;
   padding: 2.5rem 2rem;
-  border-radius: 14px;
-  border: 1px solid rgba(13, 40, 24, 0.12);
+  border-radius: 12px;
+  border: 1px solid #e1ddd4;
   text-align: center;
-  box-shadow: 0 10px 26px rgba(13, 40, 24, 0.08);
+  box-shadow: 0 10px 26px rgba(13,40,24,0.08);
 }
 
 .pinnacle-home .prt-stat-value {
@@ -218,40 +243,38 @@
   font-weight: 850;
   color: #1a5f3f;
   line-height: 1;
-  margin: 0 0 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .pinnacle-home .prt-stat-label {
   font-size: 1rem;
   color: #4a5f54;
-  margin: 0;
   font-weight: 600;
 }
 
-/* ---------------------------
+/* ===============================
    SECTIONS
---------------------------- */
+   =============================== */
 .pinnacle-home .prt-section {
-  padding: 0 1rem;
   margin: 4rem 0;
 }
 
 .pinnacle-home .prt-section-header {
   text-align: center;
-  max-width: 760px;
+  max-width: 750px;
   margin: 0 auto 3rem;
 }
 
 .pinnacle-home .prt-section-title {
-  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  font-size: clamp(2rem, 4vw, 2.75rem);
   font-weight: 820;
-  letter-spacing: -0.01em;
-  margin: 0 0 0.9rem;
   color: #0d2818;
+  margin: 0 0 1rem;
+  letter-spacing: -0.01em;
 }
 
 .pinnacle-home .prt-section-subtitle {
-  font-size: 1.1rem;
+  font-size: 1.125rem;
   color: #4a5f54;
   line-height: 1.7;
   margin: 0;
@@ -266,27 +289,28 @@
 .pinnacle-home .prt-service-card {
   background: #ffffff;
   padding: 2rem;
-  border-radius: 14px;
-  border: 1px solid rgba(13, 40, 24, 0.12);
-  box-shadow: 0 10px 26px rgba(13, 40, 24, 0.08);
+  border-radius: 12px;
+  border: 1px solid #e1ddd4;
+  box-shadow: 0 10px 26px rgba(13,40,24,0.08);
   transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
 }
 
 .pinnacle-home .prt-service-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 36px rgba(13, 40, 24, 0.12);
-  border-color: rgba(127, 178, 133, 0.55);
+  box-shadow: 0 16px 36px rgba(13,40,24,0.12);
+  border-color: rgba(127,178,133,0.55);
 }
 
 .pinnacle-home .prt-service-icon {
-  width: 52px;
-  height: 52px;
+  width: 54px;
+  height: 54px;
   border-radius: 14px;
-  background: linear-gradient(135deg, #1a5f3f 0%, #2d7a54 100%);
-  display: flex;
+  background: linear-gradient(135deg, #1a5f3f, #2d7a54);
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1.2rem;
+  box-shadow: 0 10px 24px rgba(26,95,63,0.18);
 }
 
 .pinnacle-home .prt-service-icon svg {
@@ -297,7 +321,7 @@
 
 .pinnacle-home .prt-service-title {
   font-size: 1.25rem;
-  font-weight: 800;
+  font-weight: 820;
   color: #0d2818;
   margin: 0 0 0.6rem;
 }
@@ -308,65 +332,53 @@
   margin: 0;
 }
 
-/* ---------------------------
+/* ===============================
    CTA SECTION (bottom)
---------------------------- */
+   =============================== */
 .pinnacle-home .prt-cta-section {
   background: linear-gradient(135deg, #1a5f3f 0%, #2d7a54 100%);
   padding: 4rem 2rem;
   border-radius: 16px;
   text-align: center;
-  color: #ffffff;
-  margin: 4rem 1rem;
-  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.18);
+  color: white;
+  margin: 4rem 0 2rem;
+  box-shadow: 0 16px 42px rgba(0,0,0,0.18);
 }
 
 .pinnacle-home .prt-cta-section h2 {
-  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  font-size: clamp(2rem, 4vw, 2.75rem);
   margin: 0 0 1rem;
-  letter-spacing: -0.01em;
+  color: #ffffff;
 }
 
 .pinnacle-home .prt-cta-section p {
-  font-size: 1.15rem;
-  color: rgba(255, 255, 255, 0.92);
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.92);
   margin: 0 auto 2rem;
-  max-width: 640px;
+  max-width: 650px;
   line-height: 1.65;
 }
 
-/* ---------------------------
+/* Don’t pulse the bottom CTA button */
+.pinnacle-home .prt-cta-section .prt-btn-primary {
+  animation: none;
+}
+
+/* ===============================
    RESPONSIVE
---------------------------- */
+   =============================== */
 @media (max-width: 768px) {
   .pinnacle-home .prt-hero { min-height: 70vh; }
   .pinnacle-home .prt-stats { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
   .pinnacle-home .prt-services { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 640px) {
-  .pinnacle-home .prt-hero-cta {
-    flex-direction: column;
-    gap: 0.9rem;
-  }
-  .pinnacle-home .prt-btn {
-    width: 100%;
-    max-width: 340px;
-  }
+  .pinnacle-home .prt-hero-cta { flex-direction: column; }
+  .pinnacle-home .prt-btn { width: 100%; max-width: 340px; }
 }
 
 @media (max-width: 480px) {
   .pinnacle-home .prt-stats { grid-template-columns: 1fr; }
-}
-
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .pinnacle-home .prt-btn,
-  .pinnacle-home .prt-service-card {
-    transition: none !important;
-  }
-}
-/* src/css/50-events.css */
+  .pinnacle-home .prt-trust-item { width: 100%; justify-content: center; }
+}/* src/css/50-events.css */
 /* PINNACLE - EVENTS PAGE (Squarespace Events) */
 
 /* Event item "card" styling (multiple selector fallbacks) */
