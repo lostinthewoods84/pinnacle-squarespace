@@ -1,0 +1,45 @@
+/* PRT - Mobile Quick Links (site-wide)
+   Inserts via JS under header. Visible on mobile only.
+*/
+
+.prt-mobile-quicklinks {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .prt-mobile-quicklinks {
+    display: flex;
+    gap: 10px;
+    padding: 10px 14px;
+    margin: 0;
+
+    /* Sticky, but stays in flow (no overlap) */
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  }
+
+  .prt-mobile-quicklinks a {
+    flex: 1;
+    text-align: center;
+    padding: 10px 12px;
+    border-radius: 999px;
+    font-weight: 800;
+    text-decoration: none;
+    line-height: 1;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.10);
+    color: #fff;
+  }
+
+  .prt-mobile-quicklinks .prt-ql--races {
+    background: var(--primary, #2563eb);
+  }
+
+  .prt-mobile-quicklinks .prt-ql--results {
+    background: var(--accent, #f97316);
+  }
+}
