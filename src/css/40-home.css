@@ -119,6 +119,7 @@
   white-space: nowrap;
   transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease, color 180ms ease, border-color 180ms ease;
   -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
 }
 
 /* Primary */
@@ -397,6 +398,7 @@
     grid-template-columns: 1fr;
   }
 
+  /* HERO CTA: match the “contained button” behavior */
   .pinnacle-home .prt-hero-cta {
     flex-direction: column;
     align-items: center;
@@ -404,12 +406,16 @@
     width: 100%;
   }
 
-  /* Keep hero CTAs inside the hero card */
   .pinnacle-home .prt-hero-cta .prt-btn {
+    display: block;
     width: 100%;
-    max-width: 280px;
-    padding: 14px 18px;
+    max-width: 280px;      /* contained, like bottom CTA */
+    margin: 0 auto;
+    padding: 14px 18px;    /* reduce to prevent “edge kiss” */
     font-size: 1rem;
+    white-space: normal;   /* allow wrapping if needed */
+    text-align: center;
+    box-sizing: border-box;
   }
 
   /* Slightly more bottom padding so CTA button never feels cramped */
