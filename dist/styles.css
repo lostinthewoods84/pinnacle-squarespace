@@ -98,7 +98,7 @@
   overflow: hidden;
   background: linear-gradient(135deg, #1a5f3f 0%, #2d7a54 100%);
   border-radius: 16px;
-  margin: 1rem 0 3rem;
+  margin: 0.5rem 0 1.5rem;
   color: #fff;
   box-shadow: 0 14px 40px rgba(0,0,0,0.18);
 }
@@ -602,26 +602,4 @@
 }
 .collection-type-events .eventlist-event {
   gap: 16px;
-}/* src/css/99-mobile-overrides.css */
-/* FINAL mobile spacing overrides
-   - Tighten header → quick links → hero
-   - Must load after all other CSS
-*/
-
-@media (max-width: 768px) {
-  /* Kill artificial page padding on mobile */
-  #page {
-    padding-top: 0 !important;
-  }
-
-  /* Pull quick links bar up under header */
-  .prt-mobile-quicklinks {
-    margin-top: -1rem;
-    margin-bottom: 0.25rem;
-  }
-
-  /* Pull hero closer to quick links */
-  .pinnacle-home .prt-hero {
-    margin-top: 0.25rem;
-  }
 }
