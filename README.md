@@ -359,6 +359,20 @@ This ensures the homepage always displays the next 3 upcoming races automaticall
 ### Styling
 Styles for the Summary Block are maintained in this repo (CSS), not in Squarespace.
 
+### Site-wide UI Elements
+
+Occasionally, small site-wide UI components (e.g. mobile-only navigation helpers)
+may be injected via JavaScript rather than Squarespace markup.
+
+Guidelines:
+- Inject via `src/js/20-site.js`
+- Style with uniquely prefixed classes (e.g. `prt-*`)
+- Avoid touching Squarespace header/footer selectors
+- Keep behavior minimal and defensive (prevent duplicates)
+
+These elements should remain self-contained and safe across all pages.
+
+
 ---
 
 **Last Updated:** January 2026
