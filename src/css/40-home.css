@@ -45,6 +45,7 @@
   max-width: 900px;
 }
 
+/* Hero badge (now link-safe) */
 .pinnacle-home .prt-hero-badge {
   display: inline-block;
   padding: 10px 18px;
@@ -56,6 +57,23 @@
   margin-bottom: 1.5rem;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+
+  /* link hygiene */
+  color: #ffffff;
+  text-decoration: none;
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease, border-color 180ms ease;
+}
+
+.pinnacle-home .prt-hero-badge:hover {
+  transform: translateY(-1px);
+  background: rgba(255,255,255,0.18);
+  border-color: rgba(255,255,255,0.42);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.20);
+}
+
+.pinnacle-home .prt-hero-badge:focus-visible {
+  outline: 3px solid rgba(255,255,255,0.85);
+  outline-offset: 4px;
 }
 
 .pinnacle-home .prt-hero h1 {
@@ -76,7 +94,7 @@
 }
 
 /* ===============================
-   HERO CTA BUTTONS (FIX)
+   HERO CTA BUTTONS
    =============================== */
 .pinnacle-home .prt-hero-cta {
   display: flex;
@@ -324,6 +342,10 @@
   color: white;
   margin: 4rem 0 2rem;
   box-shadow: 0 16px 42px rgba(0,0,0,0.18);
+
+  /* safety net so nothing can visually spill outside rounded corners */
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .pinnacle-home .prt-cta-section h2 {
@@ -345,38 +367,64 @@
   animation: none;
 }
 
+/* Force bottom CTA button to fit inside card (mobile-safe) */
+.pinnacle-home .prt-cta-section .prt-btn {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  margin: 24px auto 0;
+  box-sizing: border-box;
+}
+
 /* ===============================
    RESPONSIVE
    =============================== */
 @media (max-width: 768px) {
-  .pinnacle-home .prt-hero { min-height: 70vh; }
-  .pinnacle-home .prt-stats { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-  .pinnacle-home .prt-services { grid-template-columns: 1fr; }
-  .pinnacle-home .prt-hero-cta { flex-direction: column; }
-  .pinnacle-home .prt-btn { width: 100%; max-width: 340px; }
-}
+  .pinnacle-home .prt-hero {
+    min-height: 70vh;
+  }
 
-@media (max-width: 480px) {
-  .pinnacle-home .prt-stats { grid-template-columns: 1fr; }
-  .pinnacle-home .prt-trust-item { width: 100%; justify-content: center; }
-}
-/* --- MOBILE HERO CTA FIT FIX --- */
-@media (max-width: 768px) {
   .pinnacle-home .prt-hero-content {
-    padding: 1.25rem !important;
+    padding: 1.25rem;
+  }
+
+  .pinnacle-home .prt-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .pinnacle-home .prt-services {
+    grid-template-columns: 1fr;
   }
 
   .pinnacle-home .prt-hero-cta {
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 0.75rem !important;
-    width: 100% !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
   }
 
-  .pinnacle-home .prt-btn {
-    width: 100% !important;
-    max-width: 280px !important; /* keeps them inside the hero card */
-    padding: 14px 18px !important;
-    font-size: 1rem !important;
+  /* Keep hero CTAs inside the hero card */
+  .pinnacle-home .prt-hero-cta .prt-btn {
+    width: 100%;
+    max-width: 280px;
+    padding: 14px 18px;
+    font-size: 1rem;
+  }
+
+  /* Slightly more bottom padding so CTA button never feels cramped */
+  .pinnacle-home .prt-cta-section {
+    padding-bottom: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pinnacle-home .prt-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .pinnacle-home .prt-trust-item {
+    width: 100%;
+    justify-content: center;
   }
 }
