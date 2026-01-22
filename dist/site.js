@@ -169,9 +169,22 @@ window.PINNACLE_TEMPLATES.home = function () {
       <a class="prt-ql prt-ql--results" href="${resultsHref}">Results</a>
     `;
 
-    // Best placement: inside #page (so it participates in layout and avoids "dead space")
+    // Best placement:
+    // Put the bar right before the first Squarespace page section
+    // so any internal "header spacer" doesn't sit between the bar and content.
     const page = document.querySelector("#page");
     if (page) {
+      const firstSection =
+        page.querySelector(".page-section") ||
+        page.querySelector("main") ||
+        page.querySelector("#siteWrapper") ||
+        page.firstElementChild;
+
+      if (firstSection) {
+        firstSection.insertAdjacentElement("beforebegin", bar);
+        return;
+      }
+
       page.insertAdjacentElement("afterbegin", bar);
       return;
     }
@@ -192,10 +205,7 @@ window.PINNACLE_TEMPLATES.home = function () {
   }
 
   function init() {
-    // Always run (site-wide)
     injectMobileQuickLinks();
-
-    // Only affects home if .pinnacle-home exists
     renderHome();
   }
 
