@@ -600,4 +600,19 @@
 }
 .collection-type-events .eventlist-event {
   gap: 16px;
+}/* src/css/99-mobile-overrides.css */
+/* Mobile overrides that must win against 40-home.css and any Squarespace spacing */
+
+@media (max-width: 768px) {
+  /* 1) Tighten gap between quick links bar and hero */
+  .pinnacle-home .prt-hero {
+    margin-top: -0.5rem !important;
+  }
+
+  /* 2) If you previously added extra padding-top to #page to account for the quick-links bar,
+        it will create a big blank gap (because the bar is NOT inside #page).
+        This resets #page to just the header offset. */
+  #page {
+    padding-top: var(--prt-header-offset-mobile, 74px) !important;
+  }
 }

@@ -154,10 +154,10 @@ window.PINNACLE_TEMPLATES.home = function () {
 
   // --- Mobile Quick Links (site-wide) ---
   function injectMobileQuickLinks() {
-    // prevent duplicates (Squarespace can re-render / edit mode)
+    // Prevent duplicates (Squarespace can re-render / edit mode)
     if (document.querySelector(".prt-mobile-quicklinks")) return;
 
-    // TODO: update these if your slugs differ
+    // Update these if your slugs differ
     const racesHref = "/races";
     const resultsHref = "/results";
 
@@ -169,7 +169,14 @@ window.PINNACLE_TEMPLATES.home = function () {
       <a class="prt-ql prt-ql--results" href="${resultsHref}">Results</a>
     `;
 
-    // Insert directly after Squarespace header (best UX)
+    // Best placement: inside #page (so it participates in layout and avoids "dead space")
+    const page = document.querySelector("#page");
+    if (page) {
+      page.insertAdjacentElement("afterbegin", bar);
+      return;
+    }
+
+    // Fallback: after header
     const header =
       document.querySelector("header.Header") ||
       document.querySelector(".Header") ||
@@ -177,10 +184,11 @@ window.PINNACLE_TEMPLATES.home = function () {
 
     if (header) {
       header.insertAdjacentElement("afterend", bar);
-    } else {
-      // fallback: top of body
-      document.body.insertAdjacentElement("afterbegin", bar);
+      return;
     }
+
+    // Last resort: top of body
+    document.body.insertAdjacentElement("afterbegin", bar);
   }
 
   function init() {
