@@ -1,0 +1,10 @@
+/* src/css/15-hero-spacing-mobile.css */
+/* Mobile spacing adjustment:
+   Reduce gap between quick links and hero
+*/
+
+@media (max-width: 768px) {
+  .pinnacle-home .prt-hero {
+    margin-top: -0.5rem;
+  }
+}

@@ -42,6 +42,15 @@
   .prt-mobile-quicklinks .prt-ql--results {
     background: var(--accent, #f97316);
   }
+}/* src/css/15-hero-spacing-mobile.css */
+/* Mobile spacing adjustment:
+   Reduce gap between quick links and hero
+*/
+
+@media (max-width: 768px) {
+  .pinnacle-home .prt-hero {
+    margin-top: -0.5rem;
+  }
 }/* Squarespace-native blocks on the HOME page */
 [data-url-slug="home"] .sqs-block-summary-v2 .summary-item {
   border-bottom: 1px solid rgba(0,0,0,.08);
