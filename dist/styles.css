@@ -675,4 +675,97 @@
 }
 .collection-type-events .eventlist-event {
   gap: 16px;
+}/* ===============================
+   Upcoming Races – Modern Carousel
+   (Squarespace Summary Block)
+   =============================== */
+
+.pinnacle-home .sqs-block-summary-v2 {
+  margin-top: 2rem;
+}
+
+/* Horizontal scroll container */
+.pinnacle-home .summary-item-list {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 82%;
+  gap: 1rem;
+
+  overflow-x: auto;
+  padding: 0 0 1rem;
+
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar (mobile) */
+.pinnacle-home .summary-item-list::-webkit-scrollbar {
+  display: none;
+}
+
+/* Individual race card */
+.pinnacle-home .summary-item {
+  scroll-snap-align: start;
+
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.25rem;
+
+  box-shadow: 0 12px 30px rgba(13, 40, 24, 0.10);
+  border: 1px solid rgba(13, 40, 24, 0.08);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.pinnacle-home .summary-item:active {
+  transform: scale(0.985);
+}
+
+/* Logo image */
+.pinnacle-home .summary-thumbnail {
+  margin-bottom: 1rem;
+}
+
+.pinnacle-home .summary-thumbnail img {
+  width: 100%;
+  max-height: 120px;
+  object-fit: contain;
+}
+
+/* Title */
+.pinnacle-home .summary-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #0d2818;
+  margin: 0 0 0.4rem;
+}
+
+/* Meta */
+.pinnacle-home .summary-metadata {
+  font-size: 0.95rem;
+  color: #4a5f54;
+  margin-bottom: 0.75rem;
+}
+
+/* CTA hint */
+.pinnacle-home .summary-read-more {
+  margin-top: auto;
+  font-weight: 700;
+  color: #1a5f3f;
+  text-decoration: none;
+}
+
+.pinnacle-home .summary-read-more::after {
+  content: " →";
+}
+
+/* Desktop refinement */
+@media (min-width: 769px) {
+  .pinnacle-home .summary-item-list {
+    grid-auto-columns: 30%;
+  }
 }
