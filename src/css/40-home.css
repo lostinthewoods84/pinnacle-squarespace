@@ -487,3 +487,60 @@
     margin-bottom: 0.75rem !important;
   }
 }
+/* =========================================================
+   HOMEPAGE: Remove big gaps around Upcoming Events (Squarespace blocks)
+   NOTE: This is NOT scoped to .pinnacle-home because these are native blocks
+   ========================================================= */
+
+body.homepage .sqs-block-heading {
+  margin-bottom: 0.25rem !important;
+  padding-bottom: 0 !important;
+}
+
+body.homepage .sqs-block-heading h1,
+body.homepage .sqs-block-heading h2,
+body.homepage .sqs-block-heading h3 {
+  margin-bottom: 0.25rem !important;
+}
+
+/* Spacer blocks are the #1 cause of “mystery” gaps */
+body.homepage .sqs-block-spacer {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* This is the important part: spacers often have height on the CONTENT wrapper */
+body.homepage .sqs-block-spacer .sqs-block-content {
+  height: 0 !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* If a spacer is between heading and summary, nuke it entirely */
+body.homepage .sqs-block-heading + .sqs-block-spacer {
+  display: none !important;
+}
+
+/* Pull the summary block tight to the heading */
+body.homepage .sqs-block-heading + .sqs-block-summary,
+body.homepage .sqs-block-heading + .sqs-block-summary-v2,
+body.homepage .sqs-block-heading + .sqs-block-spacer + .sqs-block-summary,
+body.homepage .sqs-block-heading + .sqs-block-spacer + .sqs-block-summary-v2 {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Reduce the “gap below” the events block */
+body.homepage .sqs-block-summary,
+body.homepage .sqs-block-summary-v2 {
+  margin-bottom: 1rem !important;
+}
+
+/* Mobile: tighten even more */
+@media (max-width: 768px) {
+  body.homepage .sqs-block-summary,
+  body.homepage .sqs-block-summary-v2 {
+    margin-bottom: 0.6rem !important;
+  }
+}
