@@ -581,6 +581,58 @@
     z-index: 2 !important;
     white-space: normal !important;
   }
+}
+/* =========================================================
+   PRT – Tighten big vertical gaps around Upcoming Events
+   (Targets Squarespace block spacing inside .pinnacle-home)
+   ========================================================= */
+
+/* Desktop + mobile: reduce excessive block spacing */
+.pinnacle-home .sqs-block-heading {
+  margin-bottom: 0.6rem !important;
+  padding-bottom: 0 !important;
+}
+
+.pinnacle-home .sqs-block-heading h1,
+.pinnacle-home .sqs-block-heading h2,
+.pinnacle-home .sqs-block-heading h3 {
+  margin-bottom: 0.35rem !important;
+}
+
+/* Kill spacer blocks that create “mystery” gaps */
+.pinnacle-home .sqs-block-spacer {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* If a spacer sits between the heading and the events block, remove it */
+.pinnacle-home .sqs-block-heading + .sqs-block-spacer {
+  display: none !important;
+  height: 0 !important;
+}
+
+/* Pull summary/events block up tight */
+.pinnacle-home .sqs-block-summary,
+.pinnacle-home .sqs-block-summary-v2 {
+  margin-top: 0.25rem !important;
+  margin-bottom: 1.25rem !important; /* reduces the second big gap */
+}
+
+/* If summary is immediately after heading (or after a spacer), eliminate top gap */
+.pinnacle-home .sqs-block-heading + .sqs-block-summary,
+.pinnacle-home .sqs-block-heading + .sqs-block-summary-v2,
+.pinnacle-home .sqs-block-heading + .sqs-block-spacer + .sqs-block-summary,
+.pinnacle-home .sqs-block-heading + .sqs-block-spacer + .sqs-block-summary-v2 {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Mobile: tighten more aggressively */
+@media (max-width: 768px) {
+  .pinnacle-home .sqs-block-summary,
+  .pinnacle-home .sqs-block-summary-v2 {
+    margin-bottom: 0.75rem !important;
+  }
 }/* src/css/50-events.css */
 /* PINNACLE - EVENTS PAGE (Squarespace Events) */
 
