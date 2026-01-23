@@ -1,8 +1,8 @@
 /* src/css/40-home.css */
-/* PINNACLE - HOME (scoped to the Squarespace placeholder .pinnacle-home) */
+/* PINNACLE – HOME (scoped to .pinnacle-home) */
 
 /* ===============================
-   Base wrapper
+   BASE WRAPPER
    =============================== */
 .pinnacle-home {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -24,7 +24,7 @@
   overflow: hidden;
   background: linear-gradient(135deg, #1a5f3f 0%, #2d7a54 100%);
   border-radius: 16px;
-  margin: 1rem 0 1rem;
+  margin: 1rem 0 3rem;
   color: #fff;
   box-shadow: 0 14px 40px rgba(0,0,0,0.18);
 }
@@ -45,7 +45,6 @@
   max-width: 900px;
 }
 
-/* Hero badge (now link-safe) */
 .pinnacle-home .prt-hero-badge {
   display: inline-block;
   padding: 10px 18px;
@@ -54,26 +53,7 @@
   border-radius: 999px;
   font-size: 0.95rem;
   font-weight: 650;
-  margin-bottom: 1.5rem;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-
-  /* link hygiene */
-  color: #ffffff;
-  text-decoration: none;
-  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease, border-color 180ms ease;
-}
-
-.pinnacle-home .prt-hero-badge:hover {
-  transform: translateY(-1px);
-  background: rgba(255,255,255,0.18);
-  border-color: rgba(255,255,255,0.42);
-  box-shadow: 0 14px 30px rgba(0,0,0,0.20);
-}
-
-.pinnacle-home .prt-hero-badge:focus-visible {
-  outline: 3px solid rgba(255,255,255,0.85);
-  outline-offset: 4px;
+  margin-bottom: 1.25rem;
 }
 
 .pinnacle-home .prt-hero h1 {
@@ -82,29 +62,25 @@
   line-height: 1.08;
   margin: 0 0 1.25rem;
   letter-spacing: -0.02em;
-  text-shadow: 0 10px 30px rgba(0,0,0,0.22);
 }
 
 .pinnacle-home .prt-hero-subtitle {
   font-size: clamp(1.125rem, 2vw, 1.375rem);
   color: rgba(255,255,255,0.92);
-  margin: 0 auto 2.25rem;
-  line-height: 1.65;
+  margin: 0 auto 2rem;
   max-width: 720px;
 }
 
 /* ===============================
-   HERO CTA BUTTONS
+   HERO CTA
    =============================== */
 .pinnacle-home .prt-hero-cta {
   display: flex;
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 2rem;
 }
 
-/* Base button */
 .pinnacle-home .prt-btn {
   display: inline-flex;
   align-items: center;
@@ -114,108 +90,17 @@
   font-weight: 750;
   font-size: 1.05rem;
   text-decoration: none;
-  cursor: pointer;
-  user-select: none;
-  white-space: nowrap;
-  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease, color 180ms ease, border-color 180ms ease;
-  -webkit-tap-highlight-color: transparent;
-  box-sizing: border-box;
 }
 
-/* Primary */
 .pinnacle-home .prt-btn-primary {
-  background: #ffffff;
-  color: #1a5f3f;
-  border: 1px solid rgba(255,255,255,0.75);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.24);
-}
-
-.pinnacle-home .prt-btn-primary:hover,
-.pinnacle-home .prt-btn-primary:focus-visible {
-  transform: translateY(-3px);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.34);
-  background: #f6faf7;
+  background: #fff;
   color: #1a5f3f;
 }
 
-/* Secondary */
 .pinnacle-home .prt-btn-secondary {
-  background: rgba(255,255,255,0.10);
-  color: #ffffff;
-  border: 2px solid rgba(255,255,255,0.70);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 12px 26px rgba(0,0,0,0.14);
-}
-
-.pinnacle-home .prt-btn-secondary:hover,
-.pinnacle-home .prt-btn-secondary:focus-visible {
-  transform: translateY(-2px);
-  background: rgba(255,255,255,0.18);
-  border-color: rgba(255,255,255,0.95);
-  box-shadow: 0 16px 34px rgba(0,0,0,0.22);
-  color: #ffffff;
-}
-
-/* Keyboard focus */
-.pinnacle-home .prt-btn:focus-visible {
-  outline: 3px solid rgba(127,178,133,0.9);
-  outline-offset: 4px;
-}
-
-/* Subtle primary pulse (only hero, stops on hover/focus) */
-@keyframes prtPulse {
-  0%   { transform: translateY(0); box-shadow: 0 12px 28px rgba(0,0,0,0.24); }
-  50%  { transform: translateY(-1px); box-shadow: 0 16px 34px rgba(0,0,0,0.30); }
-  100% { transform: translateY(0); box-shadow: 0 12px 28px rgba(0,0,0,0.24); }
-}
-
-.pinnacle-home .prt-hero-cta .prt-btn-primary {
-  animation: prtPulse 2.8s ease-in-out infinite;
-}
-
-.pinnacle-home .prt-hero-cta .prt-btn-primary:hover,
-.pinnacle-home .prt-hero-cta .prt-btn-primary:focus-visible {
-  animation: none;
-}
-
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .pinnacle-home .prt-hero-cta .prt-btn-primary {
-    animation: none !important;
-  }
-  .pinnacle-home .prt-btn {
-    transition: none !important;
-  }
-}
-
-/* ===============================
-   TRUST
-   =============================== */
-.pinnacle-home .prt-trust {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  font-size: 0.95rem;
-  color: rgba(255,255,255,0.92);
-}
-
-.pinnacle-home .prt-trust-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  padding: 8px 14px;
-  background: rgba(255,255,255,0.10);
-  border: 1px solid rgba(255,255,255,0.20);
-  border-radius: 999px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-.pinnacle-home .prt-trust-icon {
-  font-weight: 900;
-  opacity: 0.95;
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.7);
 }
 
 /* ===============================
@@ -226,211 +111,89 @@
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 2rem;
   margin: 4rem 0;
-  padding: 0;
 }
 
 .pinnacle-home .prt-stat-card {
-  background: #ffffff;
+  background: #fff;
   padding: 2.5rem 2rem;
   border-radius: 12px;
-  border: 1px solid #e1ddd4;
   text-align: center;
-  box-shadow: 0 10px 26px rgba(13,40,24,0.08);
 }
 
 .pinnacle-home .prt-stat-value {
   font-size: 2.75rem;
   font-weight: 850;
   color: #1a5f3f;
-  line-height: 1;
-  margin-bottom: 0.5rem;
 }
 
 .pinnacle-home .prt-stat-label {
   font-size: 1rem;
   color: #4a5f54;
-  font-weight: 600;
 }
 
 /* ===============================
-   SECTIONS
-   =============================== */
-.pinnacle-home .prt-section {
-  margin: 4rem 0;
-}
-
-.pinnacle-home .prt-section-header {
-  text-align: center;
-  max-width: 750px;
-  margin: 0 auto 3rem;
-}
-
-.pinnacle-home .prt-section-title {
-  font-size: clamp(2rem, 4vw, 2.75rem);
-  font-weight: 820;
-  color: #0d2818;
-  margin: 0 0 1rem;
-  letter-spacing: -0.01em;
-}
-
-.pinnacle-home .prt-section-subtitle {
-  font-size: 1.125rem;
-  color: #4a5f54;
-  line-height: 1.7;
-  margin: 0;
-}
-
-.pinnacle-home .prt-services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-}
-
-.pinnacle-home .prt-service-card {
-  background: #ffffff;
-  padding: 2rem;
-  border-radius: 12px;
-  border: 1px solid #e1ddd4;
-  box-shadow: 0 10px 26px rgba(13,40,24,0.08);
-  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
-}
-
-.pinnacle-home .prt-service-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 36px rgba(13,40,24,0.12);
-  border-color: rgba(127,178,133,0.55);
-}
-
-.pinnacle-home .prt-service-icon {
-  width: 54px;
-  height: 54px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #1a5f3f, #2d7a54);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.2rem;
-  box-shadow: 0 10px 24px rgba(26,95,63,0.18);
-}
-
-.pinnacle-home .prt-service-icon svg {
-  width: 26px;
-  height: 26px;
-  color: #ffffff;
-}
-
-.pinnacle-home .prt-service-title {
-  font-size: 1.25rem;
-  font-weight: 820;
-  color: #0d2818;
-  margin: 0 0 0.6rem;
-}
-
-.pinnacle-home .prt-service-desc {
-  color: #4a5f54;
-  line-height: 1.65;
-  margin: 0;
-}
-
-/* ===============================
-   CTA SECTION (bottom)
+   CTA SECTION
    =============================== */
 .pinnacle-home .prt-cta-section {
-  background: linear-gradient(135deg, #1a5f3f 0%, #2d7a54 100%);
+  background: linear-gradient(135deg, #1a5f3f, #2d7a54);
   padding: 4rem 2rem;
   border-radius: 16px;
   text-align: center;
   color: white;
   margin: 4rem 0 2rem;
-  box-shadow: 0 16px 42px rgba(0,0,0,0.18);
-
-  /* safety net so nothing can visually spill outside rounded corners */
-  box-sizing: border-box;
-  overflow: hidden;
-}
-
-.pinnacle-home .prt-cta-section h2 {
-  font-size: clamp(2rem, 4vw, 2.75rem);
-  margin: 0 0 1rem;
-  color: #ffffff;
-}
-
-.pinnacle-home .prt-cta-section p {
-  font-size: 1.2rem;
-  color: rgba(255,255,255,0.92);
-  margin: 0 auto 2rem;
-  max-width: 650px;
-  line-height: 1.65;
-}
-
-/* Don’t pulse the bottom CTA button */
-.pinnacle-home .prt-cta-section .prt-btn-primary {
-  animation: none;
-}
-
-/* Force bottom CTA button to fit inside card (mobile-safe) */
-.pinnacle-home .prt-cta-section .prt-btn {
-  display: block;
-  width: 100%;
-  max-width: 280px;
-  margin: 24px auto 0;
-  box-sizing: border-box;
 }
 
 /* ===============================
    RESPONSIVE
    =============================== */
 @media (max-width: 768px) {
+
   .pinnacle-home .prt-hero {
     min-height: 70vh;
+    margin-bottom: 2rem;
   }
 
   .pinnacle-home .prt-hero-content {
     padding: 1.25rem;
   }
 
+  .pinnacle-home .prt-hero-cta {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .pinnacle-home .prt-btn {
+    width: 100%;
+    max-width: 320px;
+  }
+
   .pinnacle-home .prt-stats {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
-
-  .pinnacle-home .prt-services {
-    grid-template-columns: 1fr;
-  }
-
-  /* HERO CTA: match the “contained button” behavior */
-  .pinnacle-home .prt-hero-cta {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-    width: 100%;
-  }
-
-  .pinnacle-home .prt-hero-cta .prt-btn {
-    display: block;
-    width: 100%;
-    max-width: 280px;      /* contained, like bottom CTA */
-    margin: 0 auto;
-    padding: 14px 18px;    /* reduce to prevent “edge kiss” */
-    font-size: 1rem;
-    white-space: normal;   /* allow wrapping if needed */
-    text-align: center;
-    box-sizing: border-box;
-  }
-
-  /* Slightly more bottom padding so CTA button never feels cramped */
-  .pinnacle-home .prt-cta-section {
-    padding-bottom: 3rem;
-  }
 }
 
-@media (max-width: 480px) {
-  .pinnacle-home .prt-stats {
-    grid-template-columns: 1fr;
+/* ===============================
+   🔥 MOBILE FIX: Upcoming Events spacing
+   =============================== */
+@media (max-width: 768px) {
+
+  /* Remove excess margin below "Upcoming Events" heading */
+  .pinnacle-home .sqs-block-heading,
+  .pinnacle-home .sqs-block-html,
+  .pinnacle-home .sqs-block-markdown {
+    margin-bottom: 0.5rem !important;
   }
 
-  .pinnacle-home .prt-trust-item {
-    width: 100%;
-    justify-content: center;
+  /* Pull the Summary / Events block upward */
+  .pinnacle-home .sqs-block-summary,
+  .pinnacle-home .sqs-block-summary-v2 {
+    margin-top: 0.25rem !important;
+  }
+
+  /* Reduce Squarespace section padding on mobile */
+  .pinnacle-home .page-section {
+    padding-top: 2vw !important;
+    padding-bottom: 2vw !important;
   }
 }
