@@ -118,3 +118,23 @@
     }
   }
 }
+/* =========================================================
+   MOBILE: Remove gap between Upcoming Events and CTA section
+   Cause: adjacent Squarespace sections both add vertical padding
+   ========================================================= */
+@media (max-width: 768px) {
+
+  /* Section that CONTAINS the Events Summary */
+  body.homepage section:has(.sqs-block-summary),
+  body.homepage section:has(.sqs-block-summary-v2) {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Section IMMEDIATELY AFTER the Events Summary */
+  body.homepage section:has(.sqs-block-summary) + section,
+  body.homepage section:has(.sqs-block-summary-v2) + section {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+}
