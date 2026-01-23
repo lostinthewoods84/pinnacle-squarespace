@@ -1,23 +1,27 @@
 /* src/css/05-mobile-quicklinks.css
-   PRT - Mobile Bottom Tab Bar (site-wide)
-   Injected via JS. Visible on mobile only.
+   PRT — Mobile Bottom Tab Bar (site-wide)
+   Injected via JS under <body> (or after header).
+   Best UX: fixed bottom bar on mobile with safe-area support.
 */
 
 :root {
   --prt-bottomnav-height: 66px;
 }
 
+/* Hidden by default (desktop/tablet) */
 .prt-mobile-quicklinks {
   display: none;
 }
 
+/* Mobile only */
 @media (max-width: 768px) {
 
   /* Reserve space so the bar never covers content */
   html.prt-has-bottomnav #page {
-    padding-bottom: calc(var(--prt-bottomnav-height) + env(safe-area-inset-bottom, 0px));
+    padding-bottom: calc(var(--prt-bottomnav-height) + env(safe-area-inset-bottom, 0px)) !important;
   }
 
+  /* The bar */
   .prt-mobile-quicklinks {
     display: flex;
     align-items: center;
@@ -31,20 +35,20 @@
 
     height: var(--prt-bottomnav-height);
     padding: 10px 14px calc(10px + env(safe-area-inset-bottom, 0px));
-    z-index: 9999;
+    z-index: 99999;
 
-    background: rgba(255, 255, 255, 0.94);
+    background: rgba(247, 244, 238, 0.94);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
 
-    border-top: 1px solid rgba(15, 23, 42, 0.10);
-    box-shadow: 0 -14px 40px rgba(15, 23, 42, 0.12);
+    border-top: 1px solid rgba(13, 40, 24, 0.10);
+    box-shadow: 0 -14px 40px rgba(13, 40, 24, 0.14);
 
-    /* Modern “native” feel */
+    /* Avoid iOS paint quirks */
     transform: translateZ(0);
   }
 
-  /* The tabs */
+  /* Tabs */
   .prt-mobile-quicklinks a {
     flex: 1;
     min-width: 0;
@@ -52,60 +56,61 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
 
     padding: 12px 12px;
     border-radius: 999px;
 
-    font-weight: 800;
-    font-size: 1.03rem;
+    font-weight: 850;
+    font-size: 1.02rem;
     letter-spacing: 0.01em;
     text-decoration: none;
     line-height: 1;
 
-    color: #fff;
-    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.14);
+    color: rgba(255, 255, 255, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    box-shadow:
+      0 10px 24px rgba(13, 40, 24, 0.14),
+      inset 0 1px 0 rgba(255, 255, 255, 0.20);
 
     -webkit-tap-highlight-color: transparent;
     user-select: none;
+
+    transition: transform 140ms ease, filter 140ms ease, box-shadow 140ms ease;
   }
 
   .prt-mobile-quicklinks a:active {
-    transform: scale(0.985);
+    transform: translateY(1px);
+    filter: brightness(0.98);
+    box-shadow:
+      0 8px 18px rgba(13, 40, 24, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.18);
   }
 
-  /* Optional icon sizing */
-  .prt-mobile-quicklinks svg {
-    width: 18px;
-    height: 18px;
-    display: block;
-    flex: 0 0 auto;
+  /* Optional: if you add .is-active in JS, this makes it feel “selected” */
+  .prt-mobile-quicklinks a.is-active {
+    box-shadow:
+      0 12px 28px rgba(13, 40, 24, 0.18),
+      0 0 0 3px rgba(255, 255, 255, 0.72) inset;
+    filter: saturate(1.05);
   }
 
-  /* Brand colors */
+  /* Brand-matched colors (hero green family) */
   .prt-mobile-quicklinks .prt-ql--home {
-    background: rgba(13, 40, 24, 0.78);
+    background: linear-gradient(135deg, #1a5f3f 0%, #2d7a54 100%);
   }
 
   .prt-mobile-quicklinks .prt-ql--races {
-    background: var(--primary, #2563eb);
+    background: linear-gradient(135deg, #164c33 0%, #1a5f3f 100%);
   }
 
   .prt-mobile-quicklinks .prt-ql--results {
-    background: var(--accent, #f97316);
-  }
-
-  /* Active state (modern: inner ring + slightly stronger shadow) */
-  .prt-mobile-quicklinks a.is-active {
-    box-shadow:
-      0 12px 28px rgba(15, 23, 42, 0.18),
-      0 0 0 3px rgba(255, 255, 255, 0.78) inset;
-    filter: saturate(1.06) brightness(0.98);
+    background: linear-gradient(135deg, #2d7a54 0%, #3a8f64 100%);
   }
 
   /* Keyboard focus */
   .prt-mobile-quicklinks a:focus-visible {
-    outline: 3px solid rgba(15, 23, 42, 0.35);
+    outline: 3px solid rgba(13, 40, 24, 0.35);
     outline-offset: 3px;
   }
 }
@@ -113,8 +118,11 @@
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   @media (max-width: 768px) {
+    .prt-mobile-quicklinks a {
+      transition: none !important;
+    }
     .prt-mobile-quicklinks a:active {
-      transform: none;
+      transform: none !important;
     }
   }
 }
