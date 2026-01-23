@@ -1,40 +1,90 @@
 /* src/css/05-mobile-quicklinks.css
-   PRT - Mobile Quick Links (site-wide)
+   PRT - Mobile Bottom Tab Bar (site-wide)
    Injected via JS. Visible on mobile only.
 */
+
+:root {
+  --prt-bottomnav-height: 66px;
+}
 
 .prt-mobile-quicklinks {
   display: none;
 }
 
 @media (max-width: 768px) {
-  .prt-mobile-quicklinks {
-    display: flex;
-    gap: 10px;
-    padding: 10px 14px;
-    margin: 0;
 
-    /* Sticky bar that sits BELOW the sticky header */
-    position: sticky;
-    top: var(--prt-header-offset-mobile, 74px);
-    z-index: 9000;
-
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  /* Reserve space so the bar never covers content */
+  html.prt-has-bottomnav #page {
+    padding-bottom: calc(var(--prt-bottomnav-height) + env(safe-area-inset-bottom, 0px));
   }
 
+  .prt-mobile-quicklinks {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: var(--prt-bottomnav-height);
+    padding: 10px 14px calc(10px + env(safe-area-inset-bottom, 0px));
+    z-index: 9999;
+
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border-top: 1px solid rgba(15, 23, 42, 0.10);
+    box-shadow: 0 -14px 40px rgba(15, 23, 42, 0.12);
+
+    /* Modern “native” feel */
+    transform: translateZ(0);
+  }
+
+  /* The tabs */
   .prt-mobile-quicklinks a {
     flex: 1;
-    text-align: center;
-    padding: 10px 12px;
+    min-width: 0;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 12px 12px;
     border-radius: 999px;
+
     font-weight: 800;
+    font-size: 1.03rem;
+    letter-spacing: 0.01em;
     text-decoration: none;
     line-height: 1;
-    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.10);
+
     color: #fff;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.14);
+
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+
+  .prt-mobile-quicklinks a:active {
+    transform: scale(0.985);
+  }
+
+  /* Optional icon sizing */
+  .prt-mobile-quicklinks svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+    flex: 0 0 auto;
+  }
+
+  /* Brand colors */
+  .prt-mobile-quicklinks .prt-ql--home {
+    background: rgba(13, 40, 24, 0.78);
   }
 
   .prt-mobile-quicklinks .prt-ql--races {
@@ -43,5 +93,28 @@
 
   .prt-mobile-quicklinks .prt-ql--results {
     background: var(--accent, #f97316);
+  }
+
+  /* Active state (modern: inner ring + slightly stronger shadow) */
+  .prt-mobile-quicklinks a.is-active {
+    box-shadow:
+      0 12px 28px rgba(15, 23, 42, 0.18),
+      0 0 0 3px rgba(255, 255, 255, 0.78) inset;
+    filter: saturate(1.06) brightness(0.98);
+  }
+
+  /* Keyboard focus */
+  .prt-mobile-quicklinks a:focus-visible {
+    outline: 3px solid rgba(15, 23, 42, 0.35);
+    outline-offset: 3px;
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  @media (max-width: 768px) {
+    .prt-mobile-quicklinks a:active {
+      transform: none;
+    }
   }
 }
