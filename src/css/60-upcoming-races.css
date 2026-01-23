@@ -1,94 +1,156 @@
-/* ===============================
-   Upcoming Races – Modern Carousel
-   (Squarespace Summary Block)
-   =============================== */
+/* src/css/60-upcoming-races.css
+   Upcoming Events – Modern Facelift (Squarespace carousel/summary)
+   Goal: make it look like modern swipeable cards, without changing the block type.
+*/
 
-.pinnacle-home .sqs-block-summary-v2 {
-  margin-top: 2rem;
+/* Give the whole block a bit of breathing room */
+.sqs-block-summary,
+.sqs-block-summary-v2,
+.summary-block-wrapper {
+  margin-top: 1.25rem;
 }
 
-/* Horizontal scroll container */
-.pinnacle-home .summary-item-list {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 82%;
-  gap: 1rem;
-
-  overflow-x: auto;
-  padding: 0 0 1rem;
-
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
+/* ====== CAROUSEL / GALLERY-LIKE WRAPPERS (arrows visible) ======
+   Squarespace uses different wrappers depending on version/layout.
+   We style the container and "slide" cards regardless.
+*/
+.sqs-gallery-design-carousel,
+.sqs-gallery-design-carousel .sqs-gallery-container,
+.summary-carousel,
+.summary-block-wrapper .summary-item-list {
+  border-radius: 18px;
 }
 
-/* Hide scrollbar (mobile) */
-.pinnacle-home .summary-item-list::-webkit-scrollbar {
-  display: none;
+/* If Squarespace is putting the carousel inside a colored section,
+   this makes the carousel itself feel like the “component” */
+.sqs-gallery-design-carousel,
+.summary-carousel {
+  background: rgba(255,255,255,0.70);
+  border: 1px solid rgba(15,23,42,0.08);
+  box-shadow: 0 12px 30px rgba(15,23,42,0.10);
+  overflow: hidden;
 }
 
-/* Individual race card */
-.pinnacle-home .summary-item {
-  scroll-snap-align: start;
-
-  background: #ffffff;
+/* ====== SLIDES / ITEMS ======
+   Try all common item classes Squarespace uses.
+*/
+.summary-item,
+.summary-item-list .summary-item,
+.sqs-gallery-design-carousel .slide,
+.sqs-gallery-design-carousel .sqs-gallery-slide,
+.sqs-gallery-design-carousel .sqs-gallery-item {
+  background: rgba(255,255,255,0.96);
   border-radius: 16px;
-  padding: 1.25rem;
-
-  box-shadow: 0 12px 30px rgba(13, 40, 24, 0.10);
-  border: 1px solid rgba(13, 40, 24, 0.08);
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  transition: transform 180ms ease, box-shadow 180ms ease;
+  border: 1px solid rgba(15,23,42,0.08);
+  box-shadow: 0 10px 24px rgba(15,23,42,0.10);
+  overflow: hidden;
 }
 
-.pinnacle-home .summary-item:active {
-  transform: scale(0.985);
-}
-
-/* Logo image */
-.pinnacle-home .summary-thumbnail {
-  margin-bottom: 1rem;
-}
-
-.pinnacle-home .summary-thumbnail img {
-  width: 100%;
-  max-height: 120px;
-  object-fit: contain;
-}
-
-/* Title */
-.pinnacle-home .summary-title {
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: #0d2818;
-  margin: 0 0 0.4rem;
-}
-
-/* Meta */
-.pinnacle-home .summary-metadata {
-  font-size: 0.95rem;
-  color: #4a5f54;
-  margin-bottom: 0.75rem;
-}
-
-/* CTA hint */
-.pinnacle-home .summary-read-more {
-  margin-top: auto;
-  font-weight: 700;
-  color: #1a5f3f;
+/* Make each item feel tappable */
+.summary-item a,
+.sqs-gallery-design-carousel a {
   text-decoration: none;
 }
 
-.pinnacle-home .summary-read-more::after {
+/* ====== IMAGE / THUMBNAIL ====== */
+.summary-thumbnail,
+.summary-thumbnail-outer-container,
+.sqs-gallery-design-carousel img {
+  display: block;
+}
+
+.summary-thumbnail img,
+.summary-thumbnail-outer-container img,
+.sqs-gallery-design-carousel img {
+  width: 100%;
+  height: auto;
+  max-height: 160px;
+  object-fit: contain;
+
+  /* Give logos a clean stage */
+  background: #fff;
+}
+
+/* ====== TEXT HIERARCHY ====== */
+.summary-title,
+.summary-item .summary-title,
+.summary-item h1,
+.summary-item h2,
+.summary-item h3 {
+  font-weight: 850;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  margin: 0.75rem 0 0.25rem;
+  padding: 0 1rem;
+  color: #0d2818;
+}
+
+.summary-metadata,
+.summary-item .summary-metadata,
+.summary-item .summary-excerpt,
+.summary-item .summary-excerpt p {
+  margin: 0;
+  padding: 0 1rem 0.9rem;
+  color: #4a5f54;
+  line-height: 1.5;
+  font-size: 0.98rem;
+}
+
+/* ====== CTA affordance ====== */
+.summary-read-more,
+.summary-item .summary-read-more {
+  display: inline-block;
+  margin: 0 1rem 1rem;
+  font-weight: 800;
+  color: #1a5f3f;
+}
+
+.summary-read-more::after {
   content: " →";
 }
 
-/* Desktop refinement */
-@media (min-width: 769px) {
-  .pinnacle-home .summary-item-list {
-    grid-auto-columns: 30%;
+/* ====== ARROWS / CONTROLS ======
+   Make the arrows more modern and less “old slideshow”.
+*/
+.sqs-gallery-design-carousel .sqs-gallery-controls,
+.summary-carousel .summary-carousel-controls {
+  opacity: 1;
+}
+
+.sqs-gallery-design-carousel .sqs-gallery-controls .sqs-gallery-control,
+.summary-carousel .summary-carousel-controls button {
+  background: rgba(255,255,255,0.90);
+  border: 1px solid rgba(15,23,42,0.12);
+  box-shadow: 0 10px 24px rgba(15,23,42,0.14);
+  border-radius: 999px;
+}
+
+/* ====== MOBILE: make it feel “swipeable cards” ====== */
+@media (max-width: 768px) {
+
+  /* Reduce the giant dead space the carousel often reserves */
+  .sqs-gallery-design-carousel,
+  .summary-carousel {
+    padding: 0.5rem;
+  }
+
+  /* More compact title block */
+  .summary-title,
+  .summary-item .summary-title {
+    font-size: 1.05rem;
+    padding: 0 0.9rem;
+  }
+
+  .summary-metadata,
+  .summary-item .summary-metadata,
+  .summary-item .summary-excerpt,
+  .summary-item .summary-excerpt p {
+    font-size: 0.95rem;
+    padding: 0 0.9rem 0.75rem;
+  }
+
+  .summary-read-more,
+  .summary-item .summary-read-more {
+    margin: 0 0.9rem 0.9rem;
   }
 }
