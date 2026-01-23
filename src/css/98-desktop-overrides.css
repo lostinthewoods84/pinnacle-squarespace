@@ -1,0 +1,30 @@
+/* src/css/99-desktop-overrides.css
+   Pinnacle Race Timing — last-in overrides (desktop / general)
+   Goal: reduce the “too much air” above the hero on desktop, without breaking header behavior.
+*/
+
+/* Tighten the first homepage section (the one containing the home code block) */
+body.homepage #sections > section:first-of-type {
+  padding-top: 42px !important;
+  padding-bottom: 24px !important;
+}
+
+body.homepage #sections > section:first-of-type .content-wrapper {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Reduce the hero’s own outer margin a bit (desktop + mobile, but mobile is overridden too) */
+body.homepage .pinnacle-home .prt-hero {
+  margin: 0.75rem 0 2.25rem !important; /* was 1rem 0 3rem */
+}
+
+/* Tighten spacing between hero subtitle → buttons a touch */
+body.homepage .pinnacle-home .prt-hero-subtitle {
+  margin-bottom: 1.6rem !important; /* was 2.25rem */
+}
+
+/* Tighten the trust pills slightly */
+body.homepage .pinnacle-home .prt-trust {
+  margin-top: 0.75rem;
+}

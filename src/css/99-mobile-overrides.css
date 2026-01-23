@@ -1,0 +1,81 @@
+/* src/css/99-mobile-overrides.css
+   Pinnacle Race Timing — last-in overrides (mobile first)
+   Goal: remove dead space between header → quick links → hero; keep quick links pinned cleanly under sticky header.
+*/
+
+/* -----------------------------
+   1) MOBILE QUICK LINKS BAR
+   ----------------------------- */
+
+/* Default hidden (desktop + larger screens) */
+.prt-mobile-quicklinks { display: none; }
+
+@media (max-width: 768px) {
+  /* Keep the header above the quick links */
+  header, #header {
+    z-index: 10000 !important;
+  }
+
+  .prt-mobile-quicklinks {
+    display: flex;
+    gap: 10px;
+
+    /* tighter */
+    padding: 8px 12px;
+    margin: 0;
+
+    /* STICKY: pinned under the sticky header */
+    position: sticky;
+    top: var(--prt-header-offset-mobile, 74px);
+    z-index: 9998;
+
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  }
+
+  /* Reduce the “bar looks tall” effect */
+  .prt-mobile-quicklinks a {
+    flex: 1;
+    text-align: center;
+
+    padding: 9px 10px;
+    border-radius: 999px;
+    font-weight: 800;
+    text-decoration: none;
+    line-height: 1;
+
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.10);
+    color: #fff;
+
+    /* help prevent accidental “tuck” on iOS */
+    transform: translateZ(0);
+  }
+
+  .prt-mobile-quicklinks .prt-ql--races { background: var(--primary, #2563eb); }
+  .prt-mobile-quicklinks .prt-ql--results { background: var(--accent, #f97316); }
+
+  /* -----------------------------
+     2) REMOVE THE BIG GAP ABOVE HERO (HOMEPAGE)
+     The gap is primarily Squarespace section padding on the first section,
+     *not* your hero margin-top.
+     ----------------------------- */
+
+  /* Tighten the very first homepage section padding */
+  body.homepage #sections > section:first-of-type {
+    padding-top: 18px !important;
+    padding-bottom: 18px !important;
+  }
+
+  /* If the first section uses a .content-wrapper, keep it tight too */
+  body.homepage #sections > section:first-of-type .content-wrapper {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* Optional: slightly reduce hero top margin inside the first section */
+  body.homepage .pinnacle-home .prt-hero {
+    margin-top: 0.5rem !important;
+  }
+}
