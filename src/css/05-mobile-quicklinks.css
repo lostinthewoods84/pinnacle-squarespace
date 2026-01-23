@@ -1,7 +1,6 @@
 /* src/css/05-mobile-quicklinks.css
    PRT - Mobile Bottom Tab Bar (site-wide)
    Injected via JS. Visible on mobile only.
-   Preferred UX: fixed bottom tab bar that never covers content.
 */
 
 :root {
@@ -13,6 +12,7 @@
 }
 
 @media (max-width: 768px) {
+
   /* Reserve space so the bar never covers content */
   html.prt-has-bottomnav #page {
     padding-bottom: calc(var(--prt-bottomnav-height) + env(safe-area-inset-bottom, 0px));
@@ -33,18 +33,18 @@
     padding: 10px 14px calc(10px + env(safe-area-inset-bottom, 0px));
     z-index: 9999;
 
-    background: rgba(247, 244, 238, 0.92);
+    background: rgba(255, 255, 255, 0.94);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
 
-    border-top: 1px solid rgba(13, 40, 24, 0.10);
-    box-shadow: 0 -14px 40px rgba(13, 40, 24, 0.14);
+    border-top: 1px solid rgba(15, 23, 42, 0.10);
+    box-shadow: 0 -14px 40px rgba(15, 23, 42, 0.12);
 
     /* Modern “native” feel */
     transform: translateZ(0);
   }
 
-  /* Tabs */
+  /* The tabs */
   .prt-mobile-quicklinks a {
     flex: 1;
     min-width: 0;
@@ -63,26 +63,15 @@
     text-decoration: none;
     line-height: 1;
 
-    color: rgba(255, 255, 255, 0.96);
-
-    box-shadow:
-      0 10px 24px rgba(13, 40, 24, 0.14),
-      inset 0 1px 0 rgba(255, 255, 255, 0.22);
-
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #fff;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.14);
 
     -webkit-tap-highlight-color: transparent;
     user-select: none;
-
-    transition: transform 160ms ease, filter 160ms ease, box-shadow 160ms ease;
   }
 
   .prt-mobile-quicklinks a:active {
     transform: scale(0.985);
-    filter: brightness(0.98);
-    box-shadow:
-      0 8px 18px rgba(13, 40, 24, 0.12),
-      inset 0 1px 0 rgba(255, 255, 255, 0.20);
   }
 
   /* Optional icon sizing */
@@ -93,39 +82,39 @@
     flex: 0 0 auto;
   }
 
-  /* Brand colors — tuned to match the hero green system */
+  /* Brand colors */
   .prt-mobile-quicklinks .prt-ql--home {
-    background: linear-gradient(135deg, #1a5f3f 0%, #2d7a54 100%);
+    background: rgba(13, 40, 24, 0.78);
   }
 
   .prt-mobile-quicklinks .prt-ql--races {
-    background: linear-gradient(135deg, #1e4fd9 0%, #2563eb 100%);
+    background: var(--primary, #2563eb);
   }
 
   .prt-mobile-quicklinks .prt-ql--results {
-    background: linear-gradient(135deg, #d94a18 0%, #f97316 100%);
+    background: var(--accent, #f97316);
   }
 
-  /* Active state (inner ring + slightly stronger shadow) */
+  /* Active state (modern: inner ring + slightly stronger shadow) */
   .prt-mobile-quicklinks a.is-active {
     box-shadow:
-      0 12px 28px rgba(13, 40, 24, 0.18),
+      0 12px 28px rgba(15, 23, 42, 0.18),
       0 0 0 3px rgba(255, 255, 255, 0.78) inset;
     filter: saturate(1.06) brightness(0.98);
   }
 
   /* Keyboard focus */
   .prt-mobile-quicklinks a:focus-visible {
-    outline: 3px solid rgba(13, 40, 24, 0.35);
+    outline: 3px solid rgba(15, 23, 42, 0.35);
     outline-offset: 3px;
   }
 }
 
 /* Respect reduced motion */
-@media (max-width: 768px) and (prefers-reduced-motion: reduce) {
-  .prt-mobile-quicklinks a,
-  .prt-mobile-quicklinks a:active {
-    transition: none !important;
-    transform: none !important;
+@media (prefers-reduced-motion: reduce) {
+  @media (max-width: 768px) {
+    .prt-mobile-quicklinks a:active {
+      transform: none;
+    }
   }
 }
