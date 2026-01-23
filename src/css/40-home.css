@@ -1,8 +1,8 @@
 /* src/css/40-home.css */
-/* PINNACLE – HOME (scoped to .pinnacle-home) */
+/* PINNACLE - HOME (scoped to the Squarespace placeholder .pinnacle-home) */
 
 /* ===============================
-   BASE WRAPPER
+   Base wrapper
    =============================== */
 .pinnacle-home {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -53,7 +53,9 @@
   border-radius: 999px;
   font-size: 0.95rem;
   font-weight: 650;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .pinnacle-home .prt-hero h1 {
@@ -62,25 +64,29 @@
   line-height: 1.08;
   margin: 0 0 1.25rem;
   letter-spacing: -0.02em;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.22);
 }
 
 .pinnacle-home .prt-hero-subtitle {
   font-size: clamp(1.125rem, 2vw, 1.375rem);
   color: rgba(255,255,255,0.92);
-  margin: 0 auto 2rem;
+  margin: 0 auto 2.25rem;
+  line-height: 1.65;
   max-width: 720px;
 }
 
 /* ===============================
-   HERO CTA
+   HERO CTA BUTTONS (FIX)
    =============================== */
 .pinnacle-home .prt-hero-cta {
   display: flex;
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
+  margin-bottom: 2rem;
 }
 
+/* Base button */
 .pinnacle-home .prt-btn {
   display: inline-flex;
   align-items: center;
@@ -90,17 +96,107 @@
   font-weight: 750;
   font-size: 1.05rem;
   text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
+/* Primary */
 .pinnacle-home .prt-btn-primary {
-  background: #fff;
+  background: #ffffff;
+  color: #1a5f3f;
+  border: 1px solid rgba(255,255,255,0.75);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.24);
+}
+
+.pinnacle-home .prt-btn-primary:hover,
+.pinnacle-home .prt-btn-primary:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.34);
+  background: #f6faf7;
   color: #1a5f3f;
 }
 
+/* Secondary */
 .pinnacle-home .prt-btn-secondary {
-  background: rgba(255,255,255,0.12);
-  color: #fff;
-  border: 2px solid rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.10);
+  color: #ffffff;
+  border: 2px solid rgba(255,255,255,0.70);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.14);
+}
+
+.pinnacle-home .prt-btn-secondary:hover,
+.pinnacle-home .prt-btn-secondary:focus-visible {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.18);
+  border-color: rgba(255,255,255,0.95);
+  box-shadow: 0 16px 34px rgba(0,0,0,0.22);
+  color: #ffffff;
+}
+
+/* Keyboard focus */
+.pinnacle-home .prt-btn:focus-visible {
+  outline: 3px solid rgba(127,178,133,0.9);
+  outline-offset: 4px;
+}
+
+/* Subtle primary pulse (only hero, stops on hover/focus) */
+@keyframes prtPulse {
+  0%   { transform: translateY(0); box-shadow: 0 12px 28px rgba(0,0,0,0.24); }
+  50%  { transform: translateY(-1px); box-shadow: 0 16px 34px rgba(0,0,0,0.30); }
+  100% { transform: translateY(0); box-shadow: 0 12px 28px rgba(0,0,0,0.24); }
+}
+
+.pinnacle-home .prt-hero-cta .prt-btn-primary {
+  animation: prtPulse 2.8s ease-in-out infinite;
+}
+
+.pinnacle-home .prt-hero-cta .prt-btn-primary:hover,
+.pinnacle-home .prt-hero-cta .prt-btn-primary:focus-visible {
+  animation: none;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .pinnacle-home .prt-hero-cta .prt-btn-primary {
+    animation: none !important;
+  }
+  .pinnacle-home .prt-btn {
+    transition: none !important;
+  }
+}
+
+/* ===============================
+   TRUST
+   =============================== */
+.pinnacle-home .prt-trust {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.92);
+}
+
+.pinnacle-home .prt-trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 8px 14px;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.20);
+  border-radius: 999px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.pinnacle-home .prt-trust-icon {
+  font-weight: 900;
+  opacity: 0.95;
 }
 
 /* ===============================
@@ -111,87 +207,226 @@
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 2rem;
   margin: 4rem 0;
+  padding: 0;
 }
 
 .pinnacle-home .prt-stat-card {
-  background: #fff;
+  background: #ffffff;
   padding: 2.5rem 2rem;
   border-radius: 12px;
+  border: 1px solid #e1ddd4;
   text-align: center;
+  box-shadow: 0 10px 26px rgba(13,40,24,0.08);
 }
 
 .pinnacle-home .prt-stat-value {
   font-size: 2.75rem;
   font-weight: 850;
   color: #1a5f3f;
+  line-height: 1;
+  margin-bottom: 0.5rem;
 }
 
 .pinnacle-home .prt-stat-label {
   font-size: 1rem;
   color: #4a5f54;
+  font-weight: 600;
 }
 
 /* ===============================
-   CTA SECTION
+   SECTIONS
+   =============================== */
+.pinnacle-home .prt-section {
+  margin: 4rem 0;
+}
+
+.pinnacle-home .prt-section-header {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 3rem;
+}
+
+.pinnacle-home .prt-section-title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 820;
+  color: #0d2818;
+  margin: 0 0 1rem;
+  letter-spacing: -0.01em;
+}
+
+.pinnacle-home .prt-section-subtitle {
+  font-size: 1.125rem;
+  color: #4a5f54;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.pinnacle-home .prt-services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.pinnacle-home .prt-service-card {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #e1ddd4;
+  box-shadow: 0 10px 26px rgba(13,40,24,0.08);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.pinnacle-home .prt-service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(13,40,24,0.12);
+  border-color: rgba(127,178,133,0.55);
+}
+
+.pinnacle-home .prt-service-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #1a5f3f, #2d7a54);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 10px 24px rgba(26,95,63,0.18);
+}
+
+.pinnacle-home .prt-service-icon svg {
+  width: 26px;
+  height: 26px;
+  color: #ffffff;
+}
+
+.pinnacle-home .prt-service-title {
+  font-size: 1.25rem;
+  font-weight: 820;
+  color: #0d2818;
+  margin: 0 0 0.6rem;
+}
+
+.pinnacle-home .prt-service-desc {
+  color: #4a5f54;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ===============================
+   CTA SECTION (bottom)
    =============================== */
 .pinnacle-home .prt-cta-section {
-  background: linear-gradient(135deg, #1a5f3f, #2d7a54);
+  background: linear-gradient(135deg, #1a5f3f 0%, #2d7a54 100%);
   padding: 4rem 2rem;
   border-radius: 16px;
   text-align: center;
   color: white;
   margin: 4rem 0 2rem;
+  box-shadow: 0 16px 42px rgba(0,0,0,0.18);
+}
+
+.pinnacle-home .prt-cta-section h2 {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  margin: 0 0 1rem;
+  color: #ffffff;
+}
+
+.pinnacle-home .prt-cta-section p {
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.92);
+  margin: 0 auto 2rem;
+  max-width: 650px;
+  line-height: 1.65;
+}
+
+/* Don’t pulse the bottom CTA button */
+.pinnacle-home .prt-cta-section .prt-btn-primary {
+  animation: none;
 }
 
 /* ===============================
    RESPONSIVE
    =============================== */
 @media (max-width: 768px) {
+  .pinnacle-home .prt-hero { min-height: 70vh; }
+  .pinnacle-home .prt-stats { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .pinnacle-home .prt-services { grid-template-columns: 1fr; }
+  .pinnacle-home .prt-hero-cta { flex-direction: column; }
+  .pinnacle-home .prt-btn { width: 100%; max-width: 340px; }
+}
 
-  .pinnacle-home .prt-hero {
-    min-height: 70vh;
-    margin-bottom: 2rem;
-  }
+@media (max-width: 480px) {
+  .pinnacle-home .prt-stats { grid-template-columns: 1fr; }
+  .pinnacle-home .prt-trust-item { width: 100%; justify-content: center; }
+}
 
+/* --- MOBILE HERO CTA FIT FIX --- */
+@media (max-width: 768px) {
   .pinnacle-home .prt-hero-content {
-    padding: 1.25rem;
+    padding: 1.25rem !important;
   }
 
   .pinnacle-home .prt-hero-cta {
-    flex-direction: column;
-    gap: 0.75rem;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    width: 100% !important;
   }
 
   .pinnacle-home .prt-btn {
-    width: 100%;
-    max-width: 320px;
-  }
-
-  .pinnacle-home .prt-stats {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    width: 100% !important;
+    max-width: 280px !important; /* keeps them inside the hero card */
+    padding: 14px 18px !important;
+    font-size: 1rem !important;
   }
 }
 
 /* ===============================
-   🔥 MOBILE FIX: Upcoming Events spacing
+   ✅ MOBILE: "Upcoming Events" heading STUCK to the block
+   This removes *real* Squarespace spacing (block margins + spacer blocks)
    =============================== */
 @media (max-width: 768px) {
 
-  /* Remove excess margin below "Upcoming Events" heading */
-  .pinnacle-home .sqs-block-heading,
-  .pinnacle-home .sqs-block-html,
-  .pinnacle-home .sqs-block-markdown {
-    margin-bottom: 0.5rem !important;
+  /* 1) Kill bottom spacing on the heading block wrapper */
+  .pinnacle-home .sqs-block-heading {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
   }
 
-  /* Pull the Summary / Events block upward */
-  .pinnacle-home .sqs-block-summary,
-  .pinnacle-home .sqs-block-summary-v2 {
-    margin-top: 0.25rem !important;
+  /* 2) Kill margins on the actual heading text */
+  .pinnacle-home .sqs-block-heading h1,
+  .pinnacle-home .sqs-block-heading h2,
+  .pinnacle-home .sqs-block-heading h3 {
+    margin-bottom: 0.25rem !important;
+    padding-bottom: 0 !important;
   }
 
-  /* Reduce Squarespace section padding on mobile */
+  /* 3) If there’s a Spacer block between heading and summary, remove it */
+  .pinnacle-home .sqs-block-heading + .sqs-block-spacer {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* 4) Pull the Summary block up when it comes right after the heading */
+  .pinnacle-home .sqs-block-heading + .sqs-block-summary,
+  .pinnacle-home .sqs-block-heading + .sqs-block-summary-v2,
+  .pinnacle-home .sqs-block-heading + .sqs-block-spacer + .sqs-block-summary,
+  .pinnacle-home .sqs-block-heading + .sqs-block-spacer + .sqs-block-summary-v2 {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  /* 5) Also remove any default top margin inside the summary block content */
+  .pinnacle-home .sqs-block-summary .sqs-block-content,
+  .pinnacle-home .sqs-block-summary-v2 .sqs-block-content {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  /* 6) If section padding is contributing, tighten it slightly (mobile only) */
   .pinnacle-home .page-section {
     padding-top: 2vw !important;
     padding-bottom: 2vw !important;
