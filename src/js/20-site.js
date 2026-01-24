@@ -23,32 +23,6 @@
       mount(".pinnacle-home", templates.home());
     }
   }
-<a class="prt-ql prt-ql--races" href="${ROUTES.races}" aria-label="Races">
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    aria-hidden="true"
-  >
-    <!-- Flag pole -->
-    <path
-      d="M4 3v18"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-    />
-
-    <!-- Flag -->
-    <path
-      d="M4 4h13l-3 4 3 4H4z"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linejoin="round"
-    />
-  </svg>
-  <span>Races</span>
-</a>
-
-
 
   // --- Mobile Bottom Tab Bar (site-wide) ---
   function injectMobileBottomNav() {
