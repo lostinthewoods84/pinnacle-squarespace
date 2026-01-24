@@ -79,6 +79,26 @@
     transition: transform 140ms ease, filter 140ms ease, box-shadow 140ms ease;
   }
 
+  /* A) Terrain grain (adds depth, no layout changes) */
+  .prt-mobile-quicklinks a {
+    position: relative; /* needed for ::after overlay */
+    overflow: hidden;   /* keeps grain inside pill */
+  }
+
+  .prt-mobile-quicklinks a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    background-image:
+      radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px);
+    background-size: 6px 6px;
+
+    opacity: 0.35;
+    mix-blend-mode: overlay;
+  }
+
   .prt-mobile-quicklinks a:active {
     transform: translateY(1px);
     filter: brightness(0.98);
